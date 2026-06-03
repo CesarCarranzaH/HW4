@@ -1,6 +1,8 @@
 <h1>Places</h1>
 
-<a href="/places/new" class="btn btn-outline-dark mb-3">New Place</a>
+<% if @current_user != nil %>
+  <a href="/places/new" class="btn btn-outline-dark mb-3">New Place</a>
+<% end %>
 
 <ul class="list-unstyled">
   <% for place in @places %>
