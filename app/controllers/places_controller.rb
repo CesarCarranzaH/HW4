@@ -13,19 +13,21 @@ class PlacesController < ApplicationController
     end
   end
 
-def new
-  if @current_user == nil
-    redirect_to "/sessions/new"
+  def new
+    if @current_user == nil
+      redirect_to "/sessions/new"
+    end
   end
-end
 
-def create
-  if @current_user == nil
-    redirect_to "/sessions/new"
-  else
-    @place = Place.new
-    @place["name"] = params["name"]
-    @place.save
-    redirect_to "/places"
+  def create
+    if @current_user == nil
+      redirect_to "/sessions/new"
+    else
+      @place = Place.new
+      @place["name"] = params["name"]
+      @place.save
+      redirect_to "/places"
+    end
   end
+
 end
