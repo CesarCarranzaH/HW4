@@ -9,6 +9,9 @@
     <div class="col-12 col-md-4 mb-4">
       <h5><%= entry["title"] %></h5>
       <p class="text-muted"><%= entry["occurred_on"] %></p>
+      <% if entry.uploaded_image.attached? %>
+        <img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid mb-2">
+      <% end %>
       <p><%= entry["description"] %></p>
     </div>
   <% end %>
